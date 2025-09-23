@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Rauf Mohiuddin Syed</title>
+    <title>Abdul Rauf - Data Analytics Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -121,9 +121,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #000000 0%, #1d1d1f 100%);
             position: relative;
             overflow: hidden;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%) scale(1.02);
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        /* Video Overlay */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1px);
+            z-index: -1;
         }
 
         .hero::before {
@@ -133,6 +158,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
+            z-index: 0;
         }
 
         @keyframes pulse {
@@ -488,9 +514,19 @@
     <!-- Home Page -->
     <div id="home" class="page active">
         <section class="hero">
+            <!-- Video Background -->
+            <video class="video-background" autoplay muted loop playsinline>
+                <!-- Add your video file path here -->
+                <source src="IMG_9523.mp4" type="video/mp4">
+                <source src="IMG_9523.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+            
             <div class="hero-content">
-                <h1>Hi! I am Rauf</h1>
-                <p class="subtitle">Data Analyst </p>
+                <h1>Abdul Rauf</h1>
+                <p class="subtitle">Data Analyst & Analytics Engineer</p>
                 <div class="cta-buttons">
                     <a href="#" class="btn btn-primary" onclick="navigateTo('projects')">View Projects</a>
                     <a href="https://github.com/ARaufMoSy" target="_blank" class="btn btn-secondary">GitHub</a>
@@ -704,9 +740,16 @@
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero-content');
+            const video = document.querySelector('.video-background');
+            
             if (hero) {
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
                 hero.style.opacity = 1 - scrolled / 600;
+            }
+            
+            // Parallax effect for video
+            if (video) {
+                video.style.transform = `translate(-50%, -50%) translateY(${scrolled * 0.3}px) scale(1.02)`;
             }
         });
 
