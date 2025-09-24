@@ -38,8 +38,8 @@
             top: 0;
             width: 100%;
             padding: 20px 0;
-            background: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(10px);
+            background: transparent; /* Make nav background transparent */
+            backdrop-filter: blur(10px);   /* Remove blur for full transparency */
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -48,10 +48,13 @@
             display: flex;
             justify-content: center;
             gap: 40px;
+            background: rgba(20, 20, 20, 0.7); /* Add subtle background to nav container */
+            border-radius: 12px;
+            padding: 8px 0;
         }
 
         .nav-link {
-            color: var(--text-primary);
+            color: #1D1D1F; /* Updated to requested color */
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -61,6 +64,7 @@
 
         .nav-link:hover {
             background: rgba(255, 255, 255, 0.1);
+            color: var(--accent); /* Optional: accent color on hover */
             transform: translateY(-2px);
         }
 
@@ -74,8 +78,8 @@
             text-align: center;
             position: relative;
             background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #0a0a0a 100%);
-            /* Add image background below */
-            background-image: url('mountain_1.jpg'), radial-gradient(ellipse at bottom, #1a1a2e 0%, #0a0a0a 100%);
+            /* Use mountains_1.png as background */
+            background-image: url('mountains_1.png'), radial-gradient(ellipse at bottom, #1a1a2e 0%, #0a0a0a 100%);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -89,11 +93,13 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: fadeInUp 1s ease;
+            color: #1D1D1F; /* Updated to requested color */
+            /* If you want to keep gradient text, remove this line */
         }
 
         #hero .subtitle {
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: #1D1D1F; /* Updated to requested color */
             max-width: 600px;
             animation: fadeInUp 1s ease 0.2s both;
         }
@@ -144,7 +150,7 @@
 
         .project-card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgb(245, 245, 247);
             border-radius: 12px;
             padding: 30px;
             transition: all 0.3s ease;
