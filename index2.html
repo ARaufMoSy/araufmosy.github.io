@@ -173,7 +173,7 @@
 			bottom: 0;
 			width: 100vw; /* Force full viewport width */
 			margin-left: calc(-50vw + 50%); /* Center the background and extend to full width */
-			background-image: url('herobg2.PNG');
+			background-image: url('herobg2.png');
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -215,8 +215,8 @@
             font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: var(--text-secondary);
             font-weight: 400;
-            line-height: 1.6;
-            max-width: 600px;
+            line-height: 1.2;
+            max-width: 1000px;
             opacity: 0;
             animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
         }
@@ -275,6 +275,7 @@
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
+		
 
         /* Projects Grid */
         .projects-grid {
@@ -408,31 +409,48 @@
         }
 
         .skill-category h3 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-weight: 400;
-        }
+		  display: flex;
+		  align-items: center;
+		  gap: 6px;
+		  font-size: 1rem;
+		  font-weight: 600;
+		  color: #555; /* grey category heading */
+		  margin-bottom: 10px;
+		}
 
-        .skill-items {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+		.category-icon {
+		  width: 12px;
+		  height: 12px;
+		  stroke: #888;
+		  stroke-width: 2;
+		}
 
-        .skill-item {
-            font-size: 15px;
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
-            cursor: default;
-        }
+		.skill-items {
+		  display: flex;
+		  flex-direction: column; /* stacked layout */
+		  gap: 6px;
+		}
 
-        .skill-item:hover {
-            color: var(--text-primary);
-        }
+		.skill-item {
+		  display: flex;
+		  align-items: center;
+		  gap: 8px;
+		  font-size: 0.95rem;
+		}
 
+		.skill-item i {
+		  width: 12px;
+		  height: 12px;
+		  stroke: #888; /* grey icons for items */
+		  stroke-width: 2;
+		}
+
+		.skills-grid {
+		  display: grid;
+		  gap: 24px;
+		  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		}
+		
         /* About Section */
         .about-content {
             display: grid;
@@ -920,13 +938,17 @@
 		<div class="hero-background"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Hi, I'm Rauf</h1>
-                <p class="subtitle">Data Analyst transforming complex data into strategic insights through advanced analytics and intelligent automation.</p>
+                <h1>Hi, I'm Abdul Rauf Syed</h1>
+                <p class="subtitle">Data & Business Analyst specializing in AI data driven insights and intelligent automation solutions.</p>
             </div>
             <div class="hero-meta">
                 <div class="meta-item">
-                    Focus
-                    <strong>Data Analysis & Business Intelligence</strong>
+                    Location
+                    <strong>Hamburg, Germany</strong>
+                </div>
+				<div class="meta-item">
+                    Availability
+                    <strong>Open to Opportunities</strong>
                 </div>
             </div>
         </div>
@@ -1002,61 +1024,76 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="skills-container">
-            <div class="section-header">
-                <div class="section-label">Expertise</div>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">SQL</div>
-                        <div class="skill-item">R</div>
-						<div class="skill-item">HTML/CSS</div>
-                        <div class="skill-item">JavaScript</div>
-                    </div>
-                </div>
+	<!-- Skills Section -->
+	<section id="skills">
+	  <div class="skills-container">
+		<div class="section-header">
+		  <div class="section-label">Expertise</div>
+		  <h2 class="section-title">Technical Skills</h2>
+		</div>
 
-                <div class="skill-category">
-                    <h3>Data & ML</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Pandas</div>
-                        <div class="skill-item">NumPy</div>
-                        <div class="skill-item">Scikit-learn</div>
-                        <div class="skill-item">TensorFlow</div>
-                        <div class="skill-item">PyTorch</div>
-                    </div>
-                </div>
+		<div class="skills-grid">
+		  <!-- Languages & Frameworks -->
+		  <div class="skill-category">
+			<h3><i data-feather="code" class="category-icon"></i> Languages & Frameworks</h3>
+			<div class="skill-items">
+			  <div class="skill-item"><i data-feather="code"></i> Python</div>
+			  <div class="skill-item"><i data-feather="database"></i> SQL</div>
+			  <div class="skill-item"><i data-feather="bar-chart-2"></i> R</div>
+			  <div class="skill-item"><i data-feather="grid"></i> Pandas</div>
+			  <div class="skill-item"><i data-feather="box"></i> NumPy</div>
+			  <div class="skill-item"><i data-feather="cpu"></i> Scikit-learn</div>
+			  <div class="skill-item"><i data-feather="layers"></i> dbt</div>
+			</div>
+		  </div>
 
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Power BI</div>
-                        <div class="skill-item">Tableau</div>
-                        <div class="skill-item">Databricks</div>
-                        <div class="skill-item">Excel</div>
-                        <div class="skill-item">Git</div>
-                    </div>
-                </div>
+		  <!-- Tools -->
+		  <div class="skill-category">
+			<h3><i data-feather="tool" class="category-icon"></i> Tools</h3>
+			<div class="skill-items">
+			  <div class="skill-item"><i data-feather="pie-chart"></i> Power BI</div>
+			  <div class="skill-item"><i data-feather="bar-chart"></i> Tableau</div>
+			  <div class="skill-item"><i data-feather="sliders"></i> Alteryx</div>
+			  <div class="skill-item"><i data-feather="file-text"></i> Excel</div>
+			  <div class="skill-item"><i data-feather="share-2"></i> SharePoint</div>
+			  <div class="skill-item"><i data-feather="zap"></i> Power Automate</div>
+			  <div class="skill-item"><i data-feather="cpu"></i> Copilot</div>
+			</div>
+		  </div>
 
-                <div class="skill-category">
-                    <h3>Cloud & DB</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Azure</div>
-                        <div class="skill-item">AWS</div>
-                        <div class="skill-item">SQL Server</div>
-                        <div class="skill-item">PostgreSQL</div>
-                        <div class="skill-item">MongoDB</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		  <!-- Techniques -->
+		  <div class="skill-category">
+			<h3><i data-feather="activity" class="category-icon"></i> Techniques</h3>
+			<div class="skill-items">
+			  <div class="skill-item"><i data-feather="activity"></i> Data Analysis</div>
+			  <div class="skill-item"><i data-feather="git-branch"></i> Data Modeling</div>
+			  <div class="skill-item"><i data-feather="shuffle"></i> ETL & Data Pipelines</div>
+			  <div class="skill-item"><i data-feather="trending-up"></i> Business Intelligence</div>
+			  <div class="skill-item"><i data-feather="monitor"></i> Dashboard Development</div>
+			</div>
+		  </div>
+
+		  <!-- Platforms -->
+		  <div class="skill-category">
+			<h3><i data-feather="cloud" class="category-icon"></i> Cloud & DB</h3>
+			<div class="skill-items">
+			  <div class="skill-item"><i data-feather="cloud"></i> Azure</div>
+			  <div class="skill-item"><i data-feather="cloud"></i> Snowflake</div>
+			  <div class="skill-item"><i data-feather="database"></i> SQL Server</div>
+			  <div class="skill-item"><i data-feather="database"></i> PostgreSQL</div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+	<!-- Feather Icons CDN -->
+	<script src="https://unpkg.com/feather-icons"></script>
+	<script>
+	  feather.replace();
+	</script>
+
+
 
     <!-- About Section -->
     <section id="about">
@@ -1068,9 +1105,9 @@
         <div class="about-content">
             <div class="about-text">
                 <p>I transform data into strategic decisions.</p>
-                <p>Based in Hamburg, Germany, I specialize in Business Intelligence and AI Integration. My work focuses on analyzing complex datasets and building intelligent systems that drive meaningful business outcomes.</p>
-                <p>Graduating from HAW Hamburg in November 2025 with a Bachelor's in Information Engineering, I've developed expertise in designing dashboards, building ETL pipelines, and automating workflows that transform how organizations leverage their data.</p>
-                <p>I believe in the power of data and AI to create positive impact, constantly exploring new technologies and methodologies to push the boundaries of what's possible in data science.</p>
+                <p>Hello! I'm Rauf, a Data Analyst based in Hamburg, Germany, specializing in Business Intelligence & AI Integration. I thrive on analyzing complex datasets and find motivation in turning challenges into meaningful insights that drive decisions.</p>
+                <p>In November 2025, I will graduate from HAW Hamburg with a Bachelor's in Information Engineering. Through my experience designing dashboards, building ETL pipelines, and automating workflows, I've learned how data and AI can transform decision-making in real-world business contexts.</p>
+                <p>I'm passionate about leveraging technology to make a positive impact and am always eager to learn and adapt to new advancements in the field. I value collaboration and believe that teamwork and open communication are key to driving innovation.</p>
             </div>
             
             <div class="about-details">
@@ -1173,6 +1210,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal2')"></span>
             <div class="modal-header">
+				<img src="MotionAnalysis.png" alt="Motion Data Analysis" class="modal-image">
                 <h2 class="modal-title">Motion Analysis System</h2>
             </div>
             <div class="modal-tech">
@@ -1205,6 +1243,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal3')"></span>
             <div class="modal-header">
+				<img src="Dashboard.png" alt="Supplier Management Dashboard" class="modal-image">
                 <h2 class="modal-title">Supplier Performance Dashboard</h2>
             </div>
             <div class="modal-tech">
@@ -1237,6 +1276,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal4')"></span>
             <div class="modal-header">
+				<img src="Churn.png" alt="Churn Predictione" class="modal-image">
                 <h2 class="modal-title">Customer Churn Prediction</h2>
             </div>
             <div class="modal-tech">
@@ -1268,6 +1308,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal5')"></span>
             <div class="modal-header">
+				<img src="maintenance.png" alt="Predictive Maintenance" class="modal-image">
                 <h2 class="modal-title">Predictive Maintenance System</h2>
             </div>
             <div class="modal-tech">
@@ -1430,6 +1471,27 @@
             
             setTimeout(typeWriter, 500);
         }
+		
+		// Add this new code for the radar chart
+        // Add hover functionality for skill points
+        document.querySelectorAll('.skill-point').forEach(point => {
+            const tooltip = document.getElementById('skillTooltip');
+            
+            point.addEventListener('mouseenter', (e) => {
+                const skillName = e.target.getAttribute('data-skill');
+                tooltip.textContent = skillName;
+                tooltip.classList.add('visible');
+            });
+            
+            point.addEventListener('mousemove', (e) => {
+                tooltip.style.left = (e.pageX + 10) + 'px';
+                tooltip.style.top = (e.pageY - 10) + 'px';
+            });
+            
+            point.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('visible');
+            });
+        });
     </script>
 </body>
 </html>
