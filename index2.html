@@ -173,7 +173,7 @@
 			bottom: 0;
 			width: 100vw; /* Force full viewport width */
 			margin-left: calc(-50vw + 50%); /* Center the background and extend to full width */
-			background-image: url('herobg2.PNG');
+			background-image: url('herobg2.png');
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -488,6 +488,15 @@
             margin-bottom: 32px;
             font-weight: 400;
         }
+		
+		.about-photo {
+			width: 180px;
+			height: 180px;
+			object-fit: cover;
+			border-radius: 50%;
+			margin-bottom: 32px;
+			border: 2px solid var(--border);
+		}
 
         .detail-item {
             margin-bottom: 32px;
@@ -1104,6 +1113,7 @@
         
         <div class="about-content">
             <div class="about-text">
+				 <img src="linkedin.jpg" alt="Abdul Rauf Syed" class="about-photo">
                 <p>I transform data into strategic decisions.</p>
                 <p>Hello! I'm Rauf, a Data Analyst based in Hamburg, Germany, specializing in Business Intelligence & AI Integration. I thrive on analyzing complex datasets and find motivation in turning challenges into meaningful insights that drive decisions.</p>
                 <p>In November 2025, I will graduate from HAW Hamburg with a Bachelor's in Information Engineering. Through my experience designing dashboards, building ETL pipelines, and automating workflows, I've learned how data and AI can transform decision-making in real-world business contexts.</p>
