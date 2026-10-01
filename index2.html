@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Rauf · Data Analyst</title>
+    <title>Abdul Rauf · AI Transformation Manager</title>
     <style>
         * {
             margin: 0;
@@ -76,7 +76,7 @@
 			left: 0;
 			right: 0;
 			z-index: 1000;
-			padding: 16px 48px 10px; /* Reduced top and bottom padding to shift up */
+			padding: 16px 48px 10px;
 			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
@@ -84,7 +84,7 @@
 			background: rgba(10, 10, 10, 0.8);
 			backdrop-filter: blur(20px);
 			-webkit-backdrop-filter: blur(20px);
-			padding: 2px 48px 2px; /* Further reduced when scrolled */
+			padding: 2px 48px 2px;
 		}
 
 		.nav-container {
@@ -100,16 +100,16 @@
 			font-weight: 500;
 			letter-spacing: -0.02em;
 			color: var(--text-primary);
-			margin-left: -30px; /* Move logo more to the left */
-			padding: 5px 10px; /* Add some clickable area */
-			margin-right: auto; /* Push nav links to the right */
+			margin-left: -30px;
+			padding: 5px 10px;
+			margin-right: auto;
 		}
 
 		.nav-links {
 			display: flex;
 			gap: 40px;
 			align-items: center;
-			margin-top: -2px; /* Slight upward adjustment */
+			margin-top: -2px;
 		}
 
 		.nav-link {
@@ -118,7 +118,7 @@
 			font-size: 14px;
 			transition: color 0.2s ease;
 			position: relative;
-			padding: 4px 0; /* Reduced vertical padding */
+			padding: 4px 0;
 		}
 
 		.nav-link:hover {
@@ -143,7 +143,7 @@
 		/* Mobile adjustments */
 		@media (max-width: 768px) {
 			nav {
-				padding: 12px 24px 10px; /* Adjusted for mobile */
+				padding: 12px 24px 10px;
 			}
 			
 			nav.scrolled {
@@ -151,7 +151,7 @@
 			}
 			
 			.logo {
-				margin-left: -5px; /* Less offset on mobile */
+				margin-left: -5px;
 			}
 		}
 
@@ -161,18 +161,17 @@
 			display: flex;
 			align-items: center;
 			position: relative;
-			padding: 0; /* Remove any padding from the hero container */
+			padding: 0;
 		}
 
-		/* Background container that covers full width */
 		.hero-background {
 			position: absolute;
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			width: 100vw; /* Force full viewport width */
-			margin-left: calc(-50vw + 50%); /* Center the background and extend to full width */
+			width: 100vw;
+			margin-left: calc(-50vw + 50%);
 			background-image: url('herobg2.PNG');
 			background-size: cover;
 			background-position: center;
@@ -180,7 +179,6 @@
 			z-index: 1;
 		}
 
-		/* Overlay */
 		.hero-background::after {
 			content: '';
 			position: absolute;
@@ -191,7 +189,6 @@
 			background: rgba(10, 10, 10, 0.7);
 		}
 
-		/* Content with proper padding */
 		.hero-content {
 			max-width: 1400px;
 			margin: 0 auto;
@@ -275,7 +272,6 @@
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
-		
 
         /* Projects Grid */
         .projects-grid {
@@ -371,6 +367,7 @@
             border-color: var(--border-hover);
             color: var(--text-secondary);
         }
+
 		.modal-image {
 			width: 100%;
 			height: 300px;
@@ -380,7 +377,7 @@
 		}
 
 		.modal-header {
-			margin-bottom: 32px; /* Reduced since image adds visual space */
+			margin-bottom: 32px;
 		}
 
         /* Skills Section */
@@ -414,7 +411,7 @@
 		  gap: 6px;
 		  font-size: 1rem;
 		  font-weight: 600;
-		  color: #555; /* grey category heading */
+		  color: #555;
 		  margin-bottom: 10px;
 		}
 
@@ -427,7 +424,7 @@
 
 		.skill-items {
 		  display: flex;
-		  flex-direction: column; /* stacked layout */
+		  flex-direction: column;
 		  gap: 6px;
 		}
 
@@ -441,7 +438,7 @@
 		.skill-item i {
 		  width: 12px;
 		  height: 12px;
-		  stroke: #888; /* grey icons for items */
+		  stroke: #888;
 		  stroke-width: 2;
 		}
 
@@ -450,7 +447,59 @@
 		  gap: 24px;
 		  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		}
-		
+
+        /* Experience Section */
+        .exp-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-date {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-family: 'SF Mono', 'Monaco', monospace;
+        }
+
+        .exp-role {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .exp-company {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .exp-item ul {
+            list-style: none;
+        }
+
+        .exp-item li {
+            color: var(--text-secondary);
+            font-size: 15px;
+            padding: 6px 0;
+        }
+
+        .exp-list {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .exp-list.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+
         /* About Section */
         .about-content {
             display: grid;
@@ -585,11 +634,11 @@
 			width: 20px;
 			height: 20px;
 			transition: all 0.3s ease;
-			fill: var(--text-secondary); /* Default gray color */
+			fill: var(--text-secondary);
 		}
 
 		.social-link:hover .social-icon {
-			fill: var(--text-primary); /* White on hover */
+			fill: var(--text-primary);
 			transform: scale(1.1);
 		}
 
@@ -816,6 +865,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .exp-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
             .footer-content {
                 flex-direction: column;
                 gap: 48px;
@@ -902,21 +956,20 @@
 			.logo {
 				display: flex;
 				align-items: center;
-				height: 80px; /* Fixed height for the logo container */
+				height: 80px;
 			}
 
 			.logo img {
-				max-height: 100%; /* Image will not exceed container height */
-				max-width: 150px; /* Optional: limit width too */
+				max-height: 100%;
+				max-width: 150px;
 				width: auto;
 				height: auto;
 				object-fit: contain;
 			}
 
-			/* Adjust navigation container alignment */
 			.nav-container {
 				align-items: center;
-				min-height: 60px; /* Set a minimum height for the nav */
+				min-height: 60px;
 			}
     </style>
 </head>
@@ -931,6 +984,7 @@
             <div class="nav-links">
                 <a href="#projects" class="nav-link">Work</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="Abdul_s_Resume.pdf" class="nav-link" onclick="openResume(event)">Resume</a>
@@ -948,16 +1002,16 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm Abdul Rauf Syed</h1>
-                <p class="subtitle">Data & Business Analyst specializing in AI data driven insights and intelligent automation solutions.</p>
+                <p class="subtitle">AI Transformation Manager at Allianz, specializing in AI-driven insights and intelligent automation solutions.</p>
             </div>
             <div class="hero-meta">
                 <div class="meta-item">
                     Location
-                    <strong>Hamburg, Germany</strong>
+                    <strong>Munich, Germany</strong>
                 </div>
 				<div class="meta-item">
-                    Availability
-                    <strong>Open to Opportunities</strong>
+                    Currently
+                    <strong>Allianz SE · Group Audit</strong>
                 </div>
             </div>
         </div>
@@ -1102,7 +1156,40 @@
 	  feather.replace();
 	</script>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <div class="section-label">Career</div>
+            <h2 class="section-title">Experience</h2>
+        </div>
 
+        <div class="exp-list">
+            <div class="exp-item">
+                <div class="exp-date">09/2026 – Present</div>
+                <div>
+                    <h3 class="exp-role">AI Transformation Manager</h3>
+                    <p class="exp-company">Allianz SE · Group Audit · Munich</p>
+                    <ul>
+                        <li>Business process mapping and automation</li>
+                        <li>Building specialised AI agents on sensitive data</li>
+                        <li>RAG AI systems</li>
+                        <li>Data maturity assessments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">3 years</div>
+                <div>
+                    <h3 class="exp-role">Working Student, Digital Solutions & Data Analytics</h3>
+                    <p class="exp-company">Siemens Energy AG · Hamburg</p>
+                    <ul>
+                        <li>Dashboards, ETL pipelines and workflow automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about">
@@ -1115,8 +1202,8 @@
             <div class="about-text">
 				 <img src="linkedin.jpg" alt="Abdul Rauf Syed" class="about-photo">
                 <p>I transform data into strategic decisions.</p>
-                <p>Hello! I'm Rauf, a Data Analyst based in Hamburg, Germany, specializing in Business Intelligence & AI Integration. I thrive on analyzing complex datasets and find motivation in turning challenges into meaningful insights that drive decisions.</p>
-                <p>In November 2025, I will graduate from HAW Hamburg with a Bachelor's in Information Engineering. Through my experience designing dashboards, building ETL pipelines, and automating workflows, I've learned how data and AI can transform decision-making in real-world business contexts.</p>
+                <p>Hello! I'm Rauf, an AI Transformation Manager at Allianz based in Munich, Germany, specializing in Business Intelligence & AI Integration. I thrive on analyzing complex datasets and find motivation in turning challenges into meaningful insights that drive decisions.</p>
+                <p>I graduated from HAW Hamburg with a Bachelor's in Information Engineering in November 2025. Through my experience designing dashboards, building ETL pipelines, and automating workflows, I've learned how data and AI can transform decision-making in real-world business contexts.</p>
                 <p>I'm passionate about leveraging technology to make a positive impact and am always eager to learn and adapt to new advancements in the field. I value collaboration and believe that teamwork and open communication are key to driving innovation.</p>
             </div>
             
@@ -1124,11 +1211,11 @@
                 <h3>Details</h3>
                 <div class="detail-item">
                     <div class="detail-label">Education</div>
-                    <div class="detail-value">B.Sc. Information Engineering<br>HAW Hamburg</div>
+                    <div class="detail-value">M.Sc. Digital Leadership (in progress)<br>Steinbeis University (SIBE)<br><br>B.Sc. Information Engineering<br>HAW Hamburg</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-label">Experience</div>
-                    <div class="detail-value">3+ years in Data Analytics<br>Focus on BI & Automation</div>
+                    <div class="detail-value">3+ years in Data Analytics<br>Focus on BI, AI & Automation</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-label">Interests</div>
@@ -1147,7 +1234,7 @@
         <div class="footer-content">
             <div class="footer-left">
                 <h2>Let's Connect</h2>
-                <p>Open to opportunities in data analytics and AI integration.</p>
+                <p>Always happy to talk about data, AI and automation.</p>
                 <div class="social-links">
                     <!-- Email -->
                 <a href="mailto:syedabdul0007@gmail.com" class="social-link">
@@ -1418,7 +1505,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.section-header, .projects-grid, .skills-grid, .about-content').forEach(el => {
+        document.querySelectorAll('.section-header, .projects-grid, .skills-grid, .exp-list, .about-content').forEach(el => {
             observer.observe(el);
         });
 
@@ -1482,8 +1569,7 @@
             setTimeout(typeWriter, 500);
         }
 		
-		// Add this new code for the radar chart
-        // Add hover functionality for skill points
+		// Hover functionality for skill points
         document.querySelectorAll('.skill-point').forEach(point => {
             const tooltip = document.getElementById('skillTooltip');
             
